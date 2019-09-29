@@ -41,8 +41,6 @@ server.post('/api/messages', (req, res) => {
         if (turnContext.activity.type === 'message') {            
             // Get the user's text
             const utterance = turnContext.activity.text;
- 
-            // send a reply
             await turnContext.sendActivity(`I heard you say ${ utterance }`);
         }
     });
